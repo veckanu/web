@@ -21,6 +21,11 @@
                 font-size: 260px;
                 line-height: 227px;
                 font-weight: bold;
+                z-index: 1000;
+                transition: 1s ease-in-out;
+            }
+            time:hover{
+                text-shadow: 0 0 50px white;
             }
 
             /* Thanks to https://unindented.org/articles/github-ribbon-using-css-transforms/ */
@@ -51,9 +56,16 @@
                 text-decoration: none;
                 text-shadow: 0 0 5px #444;
             }
+            #bgCanvas{
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         </style>
     </head>
     <body>
+        <canvas id="bgCanvas"></canvas>
+
         <time datetime="{year}-W{week}">{week}</time>
 
         <div class="ribbon">
@@ -97,5 +109,6 @@
             ga('create', 'UA-50793010-2', 'auto');
             ga('send', 'pageview');
         </script>
+        <script src="/main.js"></script>
     </body>
 </html>

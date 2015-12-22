@@ -1,0 +1,37 @@
+@keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-moz-keyframes snow {
+     0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@-webkit-keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    50% {background-color:#C21F1F;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px; background-color:#90c0de;}
+}
+
+@-ms-keyframes snow {
+    0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+    100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+
+body.christmas {
+    background-color: #C21F1F; 
+    background-image: url('snowflake1.png'), url('snowflake2.png'), url('snowflake3.png');
+
+    -webkit-animation: snow 32s linear infinite;
+    -moz-animation: snow 32s linear infinite;
+    -ms-animation: snow 32s linear infinite;
+    animation: snow 32s linear infinite;
+}
+
+html.christmas {
+    height: 100%;
+    background-color: #C21F1F;
+    overflow: hidden;
+}

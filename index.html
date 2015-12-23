@@ -6,6 +6,10 @@
         <title>vecka.nu</title>
         <meta name="description" content="vecka.nu ger dig aktuellt veckonummer, utan några konstigheter!">
         <link id="favicon" rel="icon" type="image/png" href="favicon.png">
+        
+        <!-- Christmas style, used last week of the year -->
+        <link href="./christmas/christmas.css" rel="stylesheet" media="screen">
+        
         <style>
             html, body { height: 100%; background-color: #90c0de; overflow: hidden; }
             time {
@@ -69,6 +73,15 @@
                     link = oldLink.cloneNode(true),
                     week = {week};
 
+                //<!-- check if it is the last week of the year -->
+                document.body = document.body || document.getElementsByTagName('body')[0];
+                document.html = document.html || document.getElementsByTagName('html')[0];
+                if (week === 52) {
+                    document.body.classList.add("christmas");
+                    document.html.classList.add("christmas");
+                }
+                //<!-- end of christmas addition -->
+                
                 if (canvas.getContext) {
                     canvas.height = canvas.width = 16;
                     var ctx = canvas.getContext('2d'),

@@ -20,8 +20,9 @@ window.onresize = function(){
 
 // Getting textures ready
 var textures = [];
-_.times(7, function(n){
-	textures.push(PIXI.Texture.fromImage("res/flake_"+(n+1)+".png"));
+var flakeImgs = document.getElementsByClassName("flake");
+_.each(flakeImgs, function(img){
+	textures.push(new PIXI.Texture(new PIXI.BaseTexture(img)));
 });
 
 // defining particle object

@@ -21,11 +21,6 @@
                 font-size: 260px;
                 line-height: 227px;
                 font-weight: bold;
-                z-index: 1000;
-                transition: 1s ease-in-out;
-            }
-            time:hover{
-                text-shadow: 0 0 50px white;
             }
 
             /* Thanks to https://unindented.org/articles/github-ribbon-using-css-transforms/ */
@@ -60,6 +55,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
+                z-index: 100;
             }
         </style>
     </head>
@@ -109,6 +105,17 @@
             ga('create', 'UA-50793010-2', 'auto');
             ga('send', 'pageview');
         </script>
+        <div style="display: none;">
+
+            <img src="res/flake_1.png" class="flake">
+            <img src="res/flake_2.png" class="flake">
+            <img src="res/flake_3.png" class="flake">
+            <img src="res/flake_4.png" class="flake">
+            <img src="res/flake_5.png" class="flake">
+            <img src="res/flake_6.png" class="flake">
+            <img src="res/flake_7.png" class="flake">
+        </div>
+        
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/3.0.8/pixi.min.js"></script>
         <script src="js/main.js"></script>

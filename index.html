@@ -52,9 +52,17 @@
                 text-decoration: none;
                 text-shadow: 0 0 5px #444;
             }
+            #bgCanvas{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 100;
+            }
         </style>
     </head>
     <body>
+        <canvas id="bgCanvas"></canvas>
+
         <time datetime="{year}-W{week}">{week}</time>
 
         <div class="ribbon">
@@ -98,5 +106,19 @@
             ga('create', 'UA-50793010-2', 'auto');
             ga('send', 'pageview');
         </script>
+        <div style="display: none;">
+
+            <img src="res/flake_1.png" class="flake">
+            <img src="res/flake_2.png" class="flake">
+            <img src="res/flake_3.png" class="flake">
+            <img src="res/flake_4.png" class="flake">
+            <img src="res/flake_5.png" class="flake">
+            <img src="res/flake_6.png" class="flake">
+            <img src="res/flake_7.png" class="flake">
+        </div>
+        
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/3.0.8/pixi.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

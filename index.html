@@ -51,6 +51,55 @@
                 text-decoration: none;
                 text-shadow: 0 0 5px #444;
             }
+            .kyckling .message {
+                position: relative;
+                left: 150px;
+                top: -160px;
+                width: 178px;
+                height: 55px;
+                padding: 0px;
+                background: #f7ff00;
+                border: #000000 solid 1px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                -webkit-box-shadow: 2px 2px 10px 0px #616161;
+                -moz-box-shadow: 2px 2px 10px 0px #616161;
+                box-shadow: 2px 2px 10px 0px #616161;
+            }
+            .message:after {
+                content: "";
+                position: absolute;
+                top: 7px;
+                left: -15px;
+                border-style: solid;
+                border-width: 15px 15px 15px 0;
+                border-color: transparent #ADB400;
+                display: block;
+                width: 0;
+                z-index: 1;
+            }
+
+            .message:before {
+                content: "";
+                position: absolute;
+                top: 7px;
+                left: -16px;
+                border-style: solid;
+                border-width: 15px 15px 15px 0;
+                border-color: transparent #000000;
+                display: block;
+                width: 0;
+                z-index: 0;
+            }
+            .message b {
+                font-size: xx-large;
+                margin-left: 10px;
+            }
+            .kyckling img {
+                height: 200px;
+                width: 150px;
+            }
         </style>
     </head>
     <body>
@@ -60,19 +109,25 @@
             <a href="https://github.com/veckanu/web">Fork me on GitHub</a>
         </div>
 
+        <div class="kyckling"> 
+            <img src="kyckling.png" alt="">
+            <div class="message"><b>Glad påsk!</b></div>
+        </div>
+
+
         <script>
             (function () {
                 document.head = document.head || document.getElementsByTagName('head')[0];
                 var canvas = document.createElement('canvas'),
-                    img = document.createElement('img'),
-                    oldLink = document.getElementById('favicon'),
-                    link = oldLink.cloneNode(true),
-                    week = {week};
+                        img = document.createElement('img'),
+                        oldLink = document.getElementById('favicon'),
+                        link = oldLink.cloneNode(true),
+                        week = {week};
 
                 if (canvas.getContext) {
                     canvas.height = canvas.width = 16;
                     var ctx = canvas.getContext('2d'),
-                        textWidth = ctx.measureText(week).width;
+                            textWidth = ctx.measureText(week).width;
 
                     img.onload = function () {
                         ctx.drawImage(this, 0, 0);
@@ -89,10 +144,17 @@
             })();
         </script>
         <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
             ga('create', 'UA-50793010-2', 'auto');
             ga('send', 'pageview');

@@ -6,6 +6,8 @@
         <title>vecka.nu</title>
         <meta name="description" content="vecka.nu ger dig aktuellt veckonummer, utan några konstigheter!">
         <link id="favicon" rel="icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+        <link rel="stylesheet" href="mapillary/style.css" />
         <style>
             html, body { height: 100%; background-color: #90c0de; overflow: hidden; }
             time {
@@ -21,6 +23,7 @@
                 font-size: 260px;
                 line-height: 227px;
                 font-weight: bold;
+                z-index: 1;
             }
 
             /* Thanks to https://unindented.org/articles/github-ribbon-using-css-transforms/ */
@@ -39,6 +42,7 @@
                 -webkit-box-shadow: 0 0 10px #888;
                 -moz-box-shadow: 0 0 10px #888;
                 box-shadow: 0 0 10px #888;
+                z-index: 1;
             }
             .ribbon a {
                 border: 1px solid #fff;
@@ -58,6 +62,12 @@
 
         <div class="ribbon">
             <a href="https://github.com/veckanu/web">Fork me on GitHub</a>
+        </div>
+
+        <div id="background">
+            <a class="logo" href="http://www.mapillary.com"></a>
+            <a id="map"></a>
+            <a id="user" target="_blank"></a>
         </div>
 
         <script>
@@ -96,6 +106,9 @@
 
             ga('create', 'UA-50793010-2', 'auto');
             ga('send', 'pageview');
-        </script>
+        </script>        
+        <script src="mapillary/locations.js"></script>        
+        <script src="mapillary/app.js"></script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
     </body>
 </html>

@@ -1,0 +1,70 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Helvetica, Arial, sans-serif;
+}
+#background {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    -webkit-filter: brightness(90%) saturate(140%) contrast(105%);
+    opacity: 0;
+    transition: opacity .2s ease-in;
+    background-clip: content-box;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    height: 40px;
+    width: 40px;
+    background-image: url('logo.png');
+    background-size: 100%;
+    border-radius: 4px;
+}
+
+#user {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    font-size: 14px;
+    z-index: 2;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    padding: 8px 16px;
+    color: #fff;
+    transition: opacity .2s ease-in-out;
+    text-decoration: none;
+}
+
+#map {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    height: 150px;
+    width: 150px;
+    border-radius: 4px;
+    opacity: 0.6;
+    z-index: 2;
+    transition: opacity .2s ease-in-out, width .2s ease-in-out, height .2s ease-in-out;
+    cursor: pointer;
+}
+#map:hover,
+#map:active {
+    opacity: 1;
+    width: 170px;
+    height: 170px;
+}
+.leaflet-container .leaflet-control-attribution {
+    font-size: 8px;
+    padding-left: 0;
+}
+.leaflet-container .leaflet-control-attribution a {
+    color: #35af6d;
+}

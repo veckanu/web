@@ -27,20 +27,31 @@ body {
     background-image: url('logo.png');
     background-size: 100%;
     border-radius: 4px;
+    opacity: 0.3;
 }
 
-#user {
+.user-container {
     position: absolute;
     bottom: 30px;
-    left: 50%;
+    width: 100%;
+    text-align: center;
+}
+#user {
     font-size: 14px;
     z-index: 2;
     border: 1px solid #fff;
     border-radius: 50px;
     padding: 8px 16px;
     color: #fff;
-    transition: opacity .2s ease-in-out;
     text-decoration: none;
+    opacity: 0.8;
+    -webkit-transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+}
+#user:hover,
+#user:active {
+    opacity: 1;
 }
 
 #map {

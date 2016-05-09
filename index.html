@@ -24,6 +24,7 @@
                 line-height: 227px;
                 font-weight: bold;
                 z-index: 1;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
             }
 
             /* Thanks to https://unindented.org/articles/github-ribbon-using-css-transforms/ */
@@ -67,7 +68,9 @@
         <div id="background">
             <a class="logo" href="http://www.mapillary.com"></a>
             <a id="map"></a>
-            <a id="user" target="_blank"></a>
+            <div class="user-container">
+                <a id="user" target="_blank"></a>
+            </div>
         </div>
 
         <script>

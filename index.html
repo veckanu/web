@@ -59,11 +59,19 @@
         <div class="ribbon">
             <a href="https://github.com/veckanu/web">Fork me on GitHub</a>
         </div>
-        <div>
-            <img src="flagga_small.gif" title="National holiday of Sweden"/>
+        <div id="flag" style="display: none">
+            <img src="Svensk_flagg_1815.svg.png" title="National holiday of Sweden"/>
         </div>
 
         <script>
+            var d = new Date();
+            var day = d.getDate();
+            alert(day);
+            if (day===6){
+                flag.style.display="";
+            }
+
+
             (function () {
                 document.head = document.head || document.getElementsByTagName('head')[0];
                 var canvas = document.createElement('canvas'),

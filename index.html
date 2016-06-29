@@ -23,6 +23,17 @@
                 font-weight: bold;
             }
 
+            .text {
+                width: 200px;
+                text-align: center;
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -170px 0 0 -100px;
+                font-size: 2rem;
+            }
+
             /* Thanks to https://unindented.org/articles/github-ribbon-using-css-transforms/ */
             .ribbon {
                 background-color: #000;
@@ -54,6 +65,7 @@
         </style>
     </head>
     <body>
+        <div class="text">3 x 9 = </div>
         <time datetime="{year}-W{week}">{week}</time>
 
         <div class="ribbon">

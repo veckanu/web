@@ -59,6 +59,8 @@
         <div class="ribbon">
             <a href="https://github.com/veckanu/web">Fork me on GitHub</a>
         </div>
+        
+        <span id="john"></span>
 
         <script>
             (function () {
@@ -87,6 +89,18 @@
                     img.src = 'favicon.png';
                 }
             })();
+        </script>
+        <script>
+            // Konamikoden
+            var user_keys = [],
+                konami = '38,38,40,40,37,39,37,39,66,65';
+            document.onkeydown = function(e){
+              user_keys.push(e.keyCode)
+              if (user_keys.toString().indexOf(konami) >= 0) {
+                document.getElementById('john').innerHTML = '<img src="img/john.gif" style="position:fixed;bottom:0;right:0;z-index:1337;" />';
+                user_keys = [];
+              }
+            }
         </script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

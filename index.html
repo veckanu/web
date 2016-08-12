@@ -89,6 +89,17 @@
             })();
         </script>
         <script>
+            // Konamikoden
+            var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
+            $(document).keydown(function(e) {
+            	kkeys.push( e.keyCode );
+            	if ( kkeys.toString().indexOf( konami ) >= 0 ) {
+            		$(document).unbind('keydown',arguments.callee);
+            		$('body').append('<img src="img/john.gif" style="position:fixed;bottom:0;right:0;z-index:1337;" />');
+            	}
+            });
+        </script>
+        <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

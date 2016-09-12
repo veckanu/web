@@ -1,6 +1,6 @@
 # vecka.nu
 
-Sätt din egna stil på [vecka.nu](http://vecka.nu/)! Varje vecka har en egen bransch där vem som helst kan skicka in [Pull Requests](https://help.github.com/articles/using-pull-requests/).
+Sätt din egna stil på [vecka.nu](http://vecka.nu/)! Varje vecka har en egen branch där vem som helst kan skicka in [Pull Requests](https://help.github.com/articles/using-pull-requests/).
 
 Det finns ett par regler och guidelines som måste följas, Pull Requests som inte följer dessa eller helt enkelt inte håller en tillräckligt hög standard kommer att ignoreras.
 

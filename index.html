@@ -1,45 +1,65 @@
-<!DOCTYPE html>
-
+﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>vecka.nu</title>
-        <meta name="description" content="vecka.nu ger dig aktuellt veckonummer, utan några konstigheter!">
-        <link id="favicon" rel="icon" type="image/png" href="favicon.png">
-        <style>
-            html, body { height: 100%; background-color: #90c0de; overflow: hidden; }
-            time {
-                position: absolute;
-                top: 50%;
-                left: 0;
-                right: 0;
-                margin: -110px 0 0 0;
-                height: 220px;
-                text-align: center;
-                color: #1c7bb7;
-                font-family: Arial;
-                font-size: 260px;
-                line-height: 227px;
-                font-weight: bold;
-            }
+<head>
+    <meta charset="UTF-8">
+    <title>Vecka.nu - Ger dig aktuellt veckonummer, utan några konstigheter!</title>
+    <meta name="description" content="vecka.nu ger dig aktuellt veckonummer, utan några konstigheter!">
+    <link id="favicon" rel="icon" type="image/png" href="favicon.png">
+    <style>
+        html, body {
+            height: 100%;
+            background-color: #90c0de;
+            overflow: hidden;
+        }
 
-            /* Thanks to https://unindented.org/articles/github-ribbon-using-css-transforms/ */
-            .ribbon {
-                background-color: #000;
-                overflow: hidden;
-                white-space: nowrap;
-                position: fixed;
-                right: -50px;
-                top: 40px;
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
-                transform: rotate(45deg);
-                -webkit-box-shadow: 0 0 10px #888;
-                -moz-box-shadow: 0 0 10px #888;
-                box-shadow: 0 0 10px #888;
-            }
+        time {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            margin: -110px 0 0 0;
+            height: 220px;
+            text-align: center;
+            color: #1c7bb7;
+            font-family: Arial;
+            font-size: 260px;
+            line-height: 227px;
+            font-weight: bold;
+        }
+
+        gladsommar {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            margin: 20px 0 0 0;
+            height: 220px;
+            text-align: center;
+            color: #2FD635;
+            font-family: Arial;
+            font-size: 50px;
+            line-height: 227px;
+            font-weight: bold;
+        }
+
+        /* Thanks to https://unindented.org/articles/github-ribbon-using-css-transforms/ */
+        .ribbon {
+            background-color: #000;
+            overflow: hidden;
+            white-space: nowrap;
+            position: fixed;
+            right: -50px;
+            top: 40px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-box-shadow: 0 0 10px #888;
+            -moz-box-shadow: 0 0 10px #888;
+            box-shadow: 0 0 10px #888;
+        }
+
             .ribbon a {
                 border: 1px solid #fff;
                 color: #fff;
@@ -51,65 +71,25 @@
                 text-decoration: none;
                 text-shadow: 0 0 5px #444;
             }
-        </style>
-    </head>
-    <body>
-        <time datetime="{year}-W{week}">{week}</time>
+    </style>
+</head>
+<body>
 
-        <div class="ribbon">
-            <a href="https://github.com/veckanu/web">Fork me on GitHub</a>
-        </div>
-        
-        <span id="john"></span>
+    <time datetime="{year}-W{week}">{week}</time>
+    <gladsommar>Glad Sommar!</gladsommar>
 
-        <script>
-            (function () {
-                document.head = document.head || document.getElementsByTagName('head')[0];
-                var canvas = document.createElement('canvas'),
-                    img = document.createElement('img'),
-                    oldLink = document.getElementById('favicon'),
-                    link = oldLink.cloneNode(true),
-                    week = {week};
-
-                if (canvas.getContext) {
-                    canvas.height = canvas.width = 16;
-                    var ctx = canvas.getContext('2d'),
-                        textWidth = ctx.measureText(week).width;
-
-                    img.onload = function () {
-                        ctx.drawImage(this, 0, 0);
-                        ctx.font = 'bold 10px "helvetica", sans-serif';
-                        ctx.fillStyle = '#066EB0';
-                        ctx.fillText(week, (canvas.width / 2) - (textWidth / 2), 12);
-
-                        link.href = canvas.toDataURL('image/png');
-                        document.head.removeChild(oldLink);
-                        document.head.appendChild(link);
-                    };
-                    img.src = 'favicon.png';
-                }
-            })();
-        </script>
-        <script>
-            // Konamikoden
-            var user_keys = [],
-                konami = '38,38,40,40,37,39,37,39,66,65';
-            document.onkeydown = function(e){
-              user_keys.push(e.keyCode)
-              if (user_keys.toString().indexOf(konami) >= 0) {
-                document.getElementById('john').innerHTML = '<img src="img/john.gif" style="position:fixed;bottom:0;right:0;z-index:1337;" />';
-                user_keys = [];
-              }
-            }
-        </script>
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-50793010-2', 'auto');
-            ga('send', 'pageview');
-        </script>
-    </body>
+    <div class="ribbon">
+        <a href="https://github.com/veckanu/web">Fork me on GitHub</a>
+    </div>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-50793010-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
 </html>
